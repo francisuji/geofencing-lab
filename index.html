@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geofencing Lab</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="panel">
+      <header>
+        <h1>Geofencing Lab</h1>
+        <p class="sub">EM Master in Geospatial Technologies</p>
+      </header>
+
+      <div id="alert" class="alert hidden"></div>
+      <div id="status" class="status">Ready. Start with STEP 1.</div>
+
+      <section>
+        <h2>Steps</h2>
+        <div class="row"><button id="btnWhere" class="primary">1 · Where am I?</button></div>
+        <div class="row"><button id="btnReplay">4 · Replay simulated walk</button></div>
+        <div class="row">
+          <button id="btnLive">5 · Start live</button>
+          <button id="btnStop">■ Stop</button>
+        </div>
+        <div class="row"><button id="btnFenceHere">6 · Fence around me</button></div>
+      </section>
+
+      <section>
+        <h2>Fences</h2>
+        <table id="fenceTable"><thead><tr><th>Fence</th><th>State</th><th>Events</th></tr></thead><tbody></tbody></table>
+        <p class="total">Total events: <b id="total">0</b></p>
+      </section>
+
+      <section class="grow">
+        <h2>Event log</h2>
+        <ol id="log"></ol>
+      </section>
+    </aside>
+    <main id="map"></main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="geo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
